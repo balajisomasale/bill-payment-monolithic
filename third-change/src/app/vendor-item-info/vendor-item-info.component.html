@@ -1,0 +1,27 @@
+      <div class="card border-info mb-3" >
+         
+           <div class="card-body"> 
+              <h5 class="card-title">Vendor Details</h5>
+            <h5 class="card-title">Username :{{vendors.username}}</h5>
+            <p class="card-text">Name :{{vendors.name}}</p>
+            <p class="card-text">Vendor Type:{{vendors.vendor_type}}</p>
+     
+            
+         
+            <div class="card-text" >Payment Gateway:<span class="badge badge-primary">{{vendors.payment_gateway}}</span></div>
+            <p class="card-text">Website :{{vendors.website}}</p>
+            <div class="row" >   
+                    <div class="ml-auto">
+                      <button [routerLink]="['/bills',vendors.username]" type="button" class="btn btn-success">
+                        <i class="material-icons other_icon"> remove_red_eye </i> Show Bill Details
+                      </button>
+                    </div>     
+                    </div>
+          </div>
+
+      </div> 
+
+
+
+
+  

@@ -1,0 +1,66 @@
+
+
+ <div class="row">
+  <nav class="col-12 navbar navbar-expand-md  navbar-dark mynav">
+      <a class="navbar-brand" href="#"><i class="material-icons">receipt</i>Bill Payment System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ml-3 mr-2"
+          id="collapsibleNavbar">
+         
+          <div  *ngIf="loggedIn()">
+          <a href="" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25"><i  class="material-icons other_icon ">important_devices</i> Portal: {{this.authService.role1}}</a>
+            
+        </div>
+          <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item active" *ngIf="loggedIn() && this.authService.role1=='USER'">
+                            <a class="nav-link" routerLink="item-info/">Items Info</a>
+                        </li>
+              <li class="nav-item active" *ngIf="!loggedIn()">
+                  <a class="nav-link"	routerLink="homepage/">Home Page</a>
+              </li>
+            
+              <li class="nav-item active" *ngIf="loggedIn() ">
+                  <a class=
+                  "nav-link"><i class="material-icons other_icon ">person </i> {{this.authService.loggedInUser}} ({{this.authService.role1}})</a>
+              </li>
+            
+            <li class="nav-item active" *ngIf="loggedIn() && this.authService.role1=='VENDOR'">
+                    <a class="nav-link" routerLink="item-edit/">Edit Details</a>
+                </li>
+                <li class="nav-item active" *ngIf="loggedIn()" (click)="this.authService.logout()">
+                        <a class="nav-link" routerLink="homepage/">Logout</a>
+                    </li>
+       
+              <li class="nav-item active"  *ngIf="!loggedIn()">
+                  <a class="nav-link" routerLink="login/">Login</a>
+              </li>
+
+              <li class="nav-item dropdown" *ngIf="!loggedIn()">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Signup
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  routerLink="signup/">User Signup</a>
+                      <a class="dropdown-item" routerLink="vendor-signup/">Vendor Signup</a>
+              
+                   
+                    </div>
+                  </li>
+            <li class="nav-item active"  *ngIf="!loggedIn()">
+                    <a class="nav-link" routerLink="helppage/">Help Desk</a></li>
+                          
+          </ul>
+      </div>
+
+  </nav>
+</div> 
+
+<body class="bg">
+  <router-outlet></router-outlet>
+
+</body>
+
+

@@ -1,0 +1,244 @@
+/* You can add global styles to this file, and also import other style files */
+/* include stylesheet for truYum */
+.nav-link {
+	color: white !important;
+}
+
+.mynav {
+	background-color:navy;
+}
+
+#hand {
+	padding-left: 75px;
+}
+
+.material-icons {
+	vertical-align: middle;
+}
+
+#hand:hover {
+	color: red;
+}
+
+#h {
+	color: red;
+}
+
+del {
+	font-size: 13px;
+}
+
+#tit {
+	font-size: 14px
+}
+ /* .card {
+	width: 21rem;
+}  
+ */
+
+
+.par {
+	color: #943126;
+	float: right;
+}
+
+#truck {
+	color: navy;
+}
+
+#free {
+	margin: right;
+	float: right;
+}
+
+.trk {
+	float: right;
+}
+
+.orange {
+	background-color: tomato !important;
+	color: white !important;
+}
+.borange {
+    /* background-color: tomato !important; */
+    background: #0062cc;
+    color: white !important;
+    
+}
+
+#a3 {
+	float: right;
+}
+
+.right {
+	float: right;
+}
+
+.mar {
+	vertical-align: top;
+}
+
+.color {
+	color: white;
+}
+
+
+
+
+.card-img-top{width:100%;}
+
+.c1{width:21rem;}
+
+
+.cgray{color:gray;}
+
+/* .card-deck{ 
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: .5rem;
+    margin-bottom:auto;
+} */
+
+
+.inv{display:block!important;}
+/* 
+.card-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: .5rem;
+} */
+
+
+.sign:hover
+{
+	cursor:pointer;
+}
+
+
+.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.btnOrange {
+    /* background-color: tomato !important; */
+    
+    /* color: white !important; */
+    
+
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    /* width: 50%; */
+    cursor: pointer;
+}
+
+
+
+.sign1:hover
+{
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+  
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+	/* cursor:pointer; */
+}
+
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}

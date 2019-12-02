@@ -1,0 +1,15 @@
+.jumbotron {
+	background-image:
+		url("https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjHuPSz5pLmAhXyH7cAHajfBbcQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.makemymoney.com%2Fhow-to-use-internet-banking-safely%2F&psig=AOvVaw0ZP2uOPjCKfRVgfYr8dULC&ust=1575232990604614");
+min-height:900px;
+	background-size: cover;
+	width: 100%;
+}
+
+.card{
+
+	
+
+	height:80%;
+
+}

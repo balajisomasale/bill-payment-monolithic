@@ -1,0 +1,156 @@
+<div *ngIf="this.paid">
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Thank You!</h1>
+        <p class="lead"><strong>Do Visit Again</strong> Make us Popular.</p>
+        <hr>
+        <p>
+          Having trouble understanding this Payment System? <strong>Check Out our Help Desk Page</strong>
+        </p>
+ 
+      </div>
+</div>
+
+<div class="col-lg-3 col-md-6 center mx-auto" *ngIf="!this.paid">
+  
+<h3>Proceed with Payment Details</h3>
+<form [formGroup]="myForm"  >
+        <div  class="card mb-4" *ngIf="items.vendor.payment_gateway==='Credit/Debit Card' && !this.paid">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter Credit/debit Card Details:</b> 
+                    
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Card Holder's number: <input type="number" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                   Card Holder's Name: <input type = "text" required>
+                </div>
+
+                <div class="row mt-1 col ">
+                    <div class="mr-auto form-group">
+                        Enter Expiry date: <input type="month" min="2018-03" required>
+                    </div>
+                    <div class="mr-auto form-group">    
+                        Enter cvv Number: <input type = "number"  min="000" max="999" required>
+                    </div>
+                </div>
+                <div class="row mt-1 col">
+                    Bill Amount to be Paid :{{items.amt}}
+                </div>
+                <div class="row mt-1 col">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Confirm
+                              </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4" *ngIf="items.vendor.payment_gateway==='Internet Banking' && !paid">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter Internet Banking Details:</b>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Username<input type="text" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Transaction Password: <input type = "password" required>
+                </div>
+                <div class="row mt-1 col">
+                    Bill Amount to be Paid :{{items.amt}}
+                    <div class="row mt-1 col">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                    Confirm
+                                  </button>
+                    </div>
+        </div>
+            </div>
+        </div>
+        <div class="card mb-4" *ngIf="items.vendor.payment_gateway==='Paytm'">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter Paytm Details:</b>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Paytm Username<input type="text" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Paytm Password: <input type = "password" required>
+                </div>
+                <div class="row mt-1 col">
+                        Bill Amount to be Paid :   {{items.amt}}
+                </div>
+                <div class="row mt-1 col">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Confirm
+                              </button>
+                </div>
+               
+            </div>
+        </div>
+        <div class="card mb-4"  *ngIf="items.vendor.payment_gateway==='Google Pay'">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter GooglePay/TEZ Details:</b>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Enter UPI id<input type="text" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Enter PIN: <input type = "password" required>
+                </div>
+                <div class="row mt-1 col">
+                    Bill Amount to be Paid :   {{items.amt}}
+                </div>
+                <div class="row mt-1 col">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Confirm
+                              </button>
+                </div>
+            </div>
+        </div>
+</form>
+</div>
+<!-- </div> -->
+
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" (click)=pay()>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+           
+            <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>				
+                    <div class="avatar">
+
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/751678/skytsunami.png" alt="Skytsunami" />
+                        
+                    </div>
+                    <h1 class="modal-title">Awesome!</h1>	
+                </div>
+
+
+                <div class="alert alert-success mt-4" role="alert" >
+                       <h2>Payment success!</h2> 
+                       
+                    </div>
+                     
+            <div class="modal-body">
+                    <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-block" data-dismiss="modal">Got it</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>

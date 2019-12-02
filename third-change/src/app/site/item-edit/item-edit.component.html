@@ -1,0 +1,169 @@
+
+<!-- <div *ngIf="role == 'VENDOR'"> -->
+ <div *ngIf="Vendor.name!=''">
+        <div class="row">
+            <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+              <div class="card mt-5">
+                <h1 class="mt-5 ml-5">Edit Vendor Details</h1>
+                <form [formGroup]="form" (submit)="OnSubmit()">
+                  <div class="row mt-5 ml-5 mr-5">
+                      <div class="alert-danger col-12 px-auto" *ngIf="this.vendorservice.vendorExists">
+                        Username already exists
+                      </div>
+                    <div class="col-md-6 col-xs-12">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" placeholder="Enter username" formControlName="username" id="username">
+                      <div class="text-danger" *ngIf="username.invalid && username.errors.required && username.touched">username is required</div>
+                    </div>
+                  
+                    
+                  </div>
+                  <div class="row ml-5 mr-5">
+        
+        
+                      <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="name">Name</label> 
+                          <input type="text" class="form-control" placeholder="Enter Name" formControlName="name" id="name">
+                          <div class="text-danger" *ngIf="name.invalid && name.errors.required && name.touched">Name is required</div>
+                        </div>
+                    <div class="col-md-6 col-xs-12  mt-5">
+                      <label for="reg_no">Registration number</label> 
+                      <input type="text" class="form-control" placeholder="Enter Registration number" formControlName="reg_no" id="reg_no">
+                      <div class="text-danger" *ngIf="reg_no.invalid && reg_no.errors.required && reg_no.touched">Registration is required</div>
+                      
+                    </div>
+                    <div class="col-md-6 col-xs-12  mt-5">
+                      <label for="country">Country</label> 
+                      <input type="text" class="form-control" placeholder="Enter Address" formControlName="country" id="country">
+                      <div class="text-danger" *ngIf="country.invalid && country.errors.required && country.touched">Country is required</div>
+                      
+                    </div>
+        
+                  </div>
+        
+                  <div class="row ml-5 mr-5">
+                      <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="vendor_type">Type of Vendor</label> 
+                          <select name="vendor_type" class="form-control" placeholder="Enter type of Vendor" formControlName="vendor_type" id="vendor_type">
+                          
+                          
+                          <option></option>
+                          <option *ngFor="let item of bills" selected="Vendor.vendor_type == item" [value]="item">{{item}}</option>
+                        
+                        </select>
+            
+                        <div class="text-danger" *ngIf="vendor_type.invalid && vendor_type.errors.required && vendor_type.touched">Vendor Type is required</div> 
+                        </div>
+                    <div class="col-md-6 col-xs-12  mt-5">
+                      <label for="address">Address</label> 
+                      <input type="text" class="form-control" placeholder="Enter Address" formControlName="address" id="address">
+                      <div class="text-danger" *ngIf="address.invalid && address.errors.required && address.touched">Address is required</div>
+                      
+                    </div>
+                  </div>
+        
+                  <div class="row ml-5 mr-5">
+                    <div class="col-md-6 col-xs-12 mt-5">
+                      <label for="state">State</label> 
+                      <input type="text" class="form-control" placeholder="Enter state" formControlName="state" id="state">
+                      <div class="text-danger" *ngIf="state.invalid && state.errors.required && state.touched">state is required</div>
+                    </div>
+                  
+                    <div class="col-md-6 col-xs-12  mt-5">
+                      <label for="vendor_email">Email</label> 
+                      <input type="text" class="form-control" placeholder="Enter Email" formControlName="vendor_email" id="vendor_email">
+                      <div class="text-danger" *ngIf="vendor_email.invalid && vendor_email.errors.required && vendor_email.touched">Email is required</div>
+                      
+                    </div>
+        
+        
+                  </div>
+        
+          
+                    <div class="row ml-5 mr-5">
+                      <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="website">Website</label>
+                          <input type="text" class="form-control" placeholder="Enter website"
+                            formControlName="website" id="website">
+                          <div class="text-danger"
+                            *ngIf="website.invalid && website.errors.required && website.touched">website is
+                            required</div>
+                        </div>
+                        <div class="col-md-6 col-xs-12  mt-5">
+                        <label for="contact_number">Contact Number</label>
+                        <input type="number" class="form-control" placeholder="Enter Contact number"
+                          formControlName="contact_number" id="contact_number">
+                        <div class="text-danger"
+                          *ngIf="contact_number.invalid && contact_number.errors.required && contact_number.touched">Contact Number is required</div>
+                      </div>
+                    </div>
+          
+                    <div class="row ml-5 mr-5">
+                      <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="cert_issue_date">Certificate Issue Date</label>
+                          <input type="date" class="form-control" placeholder="Enter Certificate Issue Date"
+                            formControlName="cert_issue_date" id="cert_issue_date">
+                          <div class="text-danger"
+                            *ngIf="cert_issue_date.invalid && cert_issue_date.errors.required && cert_issue_date.touched">Certificate Issue Date
+                            is required</div>
+                        </div>
+            
+                        <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="cert_validity_date">Certificate Validity Date</label>
+                          <input type="date" class="form-control" placeholder="Enter Certificate Validity Date"
+                            formControlName="cert_validity_date" id="cert_validity_date">
+                          <div class="text-danger"
+                            *ngIf="cert_validity_date.invalid && cert_validity_date.errors.required && cert_validity_date.touched">Certificate Validity Date are
+                            required</div>
+                        </div>
+                      </div>
+          
+                      
+                      <div class="row ml-5 mr-5">
+                        <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="year_establishment">Establishment Year</label>
+                          <input type="number" class="form-control" placeholder="Enter Establishment Year"
+                            formControlName="year_establishment" id="year_establishment">
+                          <div class="text-danger"
+                            *ngIf="year_establishment.invalid && year_establishment.errors.required && year_establishment.touched">Establishment Year are
+                            required</div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 mt-5">
+                          <label for="payment_gateway">Payment Gateway</label>
+                          <input type="text" class="form-control" placeholder="Enter Payment Gateway"
+                            formControlName="payment_gateway" id="payment_gateway">
+                          <div class="text-danger"
+                            *ngIf="payment_gateway.invalid && payment_gateway.errors.required && payment_gateway.touched">Payment Gateway are
+                            required</div>
+                        </div>
+                      </div>
+                  
+                  <div class="row ml-5 mr-5">
+                    <div class="col-md-6 col-xs-12 mt-5">
+                      <label for="password">Password</label> 
+                      <input type="password" class="form-control" placeholder="Enter Password" formControlName="password" id="password">
+                      <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Password is required</div>
+                   
+          
+                    </div>
+                     <div class="col-md-6 col-xs-12 mt-5">
+                      <label for="confirmPassword">Confirm Password</label>
+                      <input type="password" class="form-control" placeholder="Enter Confirm Password" formControlName="confirmPassword" id="confirmPassword">
+                      <div class="text-danger" *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">Confirm the Password</div>
+                      <div class="text-danger"
+                      *ngIf="form.get('confirmPassword').hasError('nomatch')">Password and Confirm Password do not match</div> 
+                    </div> 
+                  </div>
+                  <div class="row mt-5 ml-5 mr-5 mb-5">
+                    <div class="col-12">
+                      <button type="submit" class="btn orange mt-3" [disabled]="!form.valid">Update</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+ </div>
+  <!-- </div> -->
+
+ 

@@ -1,0 +1,52 @@
+
+
+
+ <div *ngIf="role=='ADMIN'">
+  <div class="jumbotron text-center">
+    <h1 class="display-3">Welcome to Admin Portal!</h1>
+    
+    <hr>
+  
+    <p class="lead">
+      Having trouble understanding this Payment System? <strong>Check Out our Help Desk Page</strong>
+    </p>
+   
+  </div>
+ </div>
+ <div *ngIf="role=='USER'">
+  
+
+<app-search></app-search>
+
+<div class="card-deck">
+<div class="row mx-auto">
+
+  <app-vendor-item-info [vendors]="vendor" *ngFor="let vendor of Vendors"></app-vendor-item-info> 
+</div>
+
+</div>
+
+
+
+  </div>
+  <div *ngIf="role=='VENDOR'">
+      
+ <div class="jumbotron text-center">
+  <h1 class="display-3">Welcome to Vendor Portal!</h1>
+  
+  <hr>
+
+  <p class="lead">Want to Edit/Update the Details of your account.<br><strong>Go to Edit Details in the Navbar </strong> </p>
+
+  <p class="lead">
+    Having trouble understanding this Payment System? <strong>Check Out our Help Desk Page</strong>
+  </p>
+ 
+</div>
+
+
+
+
+  </div> 
+
+
